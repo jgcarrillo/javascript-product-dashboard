@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web para el control de mercancias">
+    <meta name="keywords" content="HTML, CSS, JavaScript, productos, frescos, conservas, congelados">
+    <meta name="author" content="Jorge Gómez Carrillo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepción de mercancia</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1 id="header__gestor">Recepción de mercancia</h1>
+
+    <!-- ALERTAS -->
+    <div id="contenedor__alertas">
+        <div id="alerta__faltan__datos"></div>
+        <div id="alerta__producto__add"></div>
+    </div>
+
+    <!-- FORMULARIO PRODUCTO -->
+    <form action="#" class="miFormulario">
+        <label for="producto">Nombre del producto</label>
+        <input type="text" name="producto" id="producto" placeholder="Identificación del producto" maxlength="30" pattern="[A-Za-z]+" required>
+
+        <label for="precio">Precio del producto</label>
+        <input type="number" name="precio" id="precio" placeholder="Precio unitario del producto" step="0.01" min="0" max="1000" required>
+
+        <label for="stock">Stock</label>
+        <input type="number" name="stock" id="stock" placeholder="Stock disponible en el almacén" min="0" max="100" required>
+
+        <label for="categoria">Categoría</label>
+        <select name="categoria" id="categoria">
+            <option value="Frescos">Frescos</option>
+            <option value="Congelados">Congelados</option>
+            <option value="Conservas">Conservas</option>
+        </select>
+
+        <input type="button" value="Añadir producto" id="add">
+        <input type="button" value="Eliminar producto" id="elemento">
+        <input type="button" value="Editar producto" id="editar">
+        <label for="borrar" style="display: none;">Reset</label>
+        <input type="reset" value="Limpiar campos" id="borrar">
+    </form>
+
+    <!-- TABLA PRODUCTOS -->
+    <h2 id="header__productos">Listado de productos</h2>
+    <div id="resultados">
+        <table id="tablaResultados">
+            <thead>
+                <tr>
+                    <th>Nombre del producto</th>
+                    <th>Precio del producto</th>
+                    <th>Stock del producto</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+                <!-- RESULTADOS JS -->
+                <tr>
+                    <td>Manzanas</td>
+                    <td>3.21</td>
+                    <td>50</td>
+                    <td><img src="assets/frescos.jpg" alt="Imagen para el producto frescos" class="imagenProducto"></td>
+                </tr>
+                <tr>
+                    <td>Patatas fritas</td>
+                    <td>1.80</td>
+                    <td>80</td>
+                    <td><img src="assets/congelados.jpg" alt="Imagen para el producto congelados" class="imagenProducto"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
